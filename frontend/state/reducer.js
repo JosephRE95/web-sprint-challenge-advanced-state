@@ -3,7 +3,15 @@ import { combineReducers } from 'redux'
 
 const initialWheelState = 0
 function wheel(state = initialWheelState, action) {
-  return state
+  switch (action.type){
+    case 'MOVE_CLOCKWISE':
+      return (state + 1) % 6
+    case 'MOVE_COUNTERCLOCKWISE':
+      return (state + 5) % 6
+    default:
+      return state
+  }
+  
 }
 
 const initialQuizState = null
