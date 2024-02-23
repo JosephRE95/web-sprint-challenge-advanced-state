@@ -23,7 +23,12 @@ export function setMessage(message) {
   }
 }
 
-export function setQuiz() { }
+export function setQuiz(quiz) { 
+  return{
+    type: 'SET_QUIZ_INTO_STATE',
+    payload: quiz
+  }
+}
 
 export function inputChange(id, value) { 
 
@@ -49,7 +54,7 @@ export function fetchQuiz() {
     // On successful GET:
     // - Dispatch an action to send the obtained quiz to its state
     axios.get('http://localhost:9000/api/quiz/next').then(res => {
-      console.log(res.data)
+      dispatch(setQuiz(res.data))
     })
   }
 }
