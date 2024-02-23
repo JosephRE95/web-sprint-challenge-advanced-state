@@ -15,11 +15,11 @@ console.log(props)
         // quiz already in state? Let's use that, otherwise render "Loading next quiz..."
         props.quiz ? (
           <>
-            {/* <h2>{props.quiz.question}</h2> */}
+            <h2>{props.quiz.question}</h2>
 
             <div id="quizAnswers">
               <div className="answer selected">
-                {/* {props.quiz.answer[0].text} */}
+                {props.quiz.answers[0].text}
                
                 <button>
                   SELECTED
@@ -27,7 +27,7 @@ console.log(props)
               </div>
 
               <div className="answer">
-              {/* {props.quiz.answer[1].text} */}
+              {props.quiz.answers[1].text}
                 An elephant
                 <button>
                   Select
@@ -45,7 +45,7 @@ console.log(props)
 const mapStateToProps = (state) => {
   return {
     quiz: state.quiz,
-    selectedAnswer: state.selectedAnswer
+    selectedAnswer: state.selectedAnswer,
   }
 }
 
