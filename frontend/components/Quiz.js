@@ -16,7 +16,7 @@ function Quiz(props) {
       {props.quiz ? (
         <>
           <h2>{props.quiz.question}</h2>
-
+  
           <div id="quizAnswers">
             {props.quiz.answers.map((answer) => (
               <div
@@ -30,8 +30,14 @@ function Quiz(props) {
               </div>
             ))}
           </div>
-
-          <button onClick={() => props.postAnswer(props.quiz.quiz_id, props.selectedAnswer.answer_id)} id="submitAnswerBtn">Submit answer</button>
+  
+          <button 
+            onClick={() => props.postAnswer(props.quiz.quiz_id, props.selectedAnswer.answer_id)} 
+            id="submitAnswerBtn"
+            disabled={!props.selectedAnswer} // Disable button if no answer is selected
+          >
+            Submit answer
+          </button>
         </>
       ) : (
         'Loading next quiz...'
