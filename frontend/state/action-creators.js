@@ -81,9 +81,6 @@ export function postQuiz(newQuestion, newTrueAnswer, newFalseAnswer) {
       dispatch(resetForm());
       dispatch(setMessage(`Congrats: "${newQuestion}" is a great question!`))
     })
-    // On successful POST:
-    // - Dispatch the correct message to the the appropriate state
-    // - Dispatch the resetting of the form
   }
 }
 // ❗ On promise rejections, use log statements or breakpoints, and put an appropriate error message in state
